@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Profile Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            border-radius: 25px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(180deg); }
+        }
+
+        .hero-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 8px solid #fff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-name {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-power {
+            background: linear-gradient(45deg, #ffd93d, #ff6b6b);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-bio {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 20px;
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.6;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stars {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #ffd93d;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        .power-icon {
+            display: inline-block;
+            margin-right: 8px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-card">
+        <div class="stars">⭐</div>
+        
+        <div class="hero-image">
+            🦸‍♂️
+        </div>
+        
+        <h1 class="hero-name">Super Hero</h1>
+        
+        <div class="hero-power">
+            <span class="power-icon">⚡</span>
+            Amazing Powers
+        </div>
+        
+        <div class="hero-bio">
+            This incredible hero protects the city from villains and helps people in need! 
+            With their amazing abilities, they always save the day and make the world a better place. 
+            A true champion of justice and friendship!
+        </div>
+    </div>
+    
+    <!-- Include our JavaScript files -->
+    <script src="hero.js"></script>
+    <script src="heroCalculator.js"></script>
+</body>
+</html>
